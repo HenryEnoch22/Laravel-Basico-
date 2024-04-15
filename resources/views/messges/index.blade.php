@@ -4,11 +4,13 @@
     <h1>Todos los mensajes</h1>
     <table width="100%" border="1">
         <thead>
+        <tr>
             <th>ID</th>
             <th>Nombre</th>
             <th>Email</th>
             <th>Mensaje</th>
             <th>Acciones</th>
+        </tr>
         </thead>
         <tbody>
         @foreach($mensajes as $mensaje)
@@ -34,4 +36,4 @@
         @endforeach
         </tbody>
     </table>
-@stop
+@endsection
