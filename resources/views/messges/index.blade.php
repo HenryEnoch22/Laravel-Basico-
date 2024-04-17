@@ -17,15 +17,15 @@
             <tr>
                 <td>{{$mensaje->id}}</td>
                 <td>
-                    <a href="{{ route('messages.show', $mensaje->id) }}">
+                    <a href="{{ route('mensajes.show', $mensaje->id) }}">
                         {{$mensaje->nombre}}
                     </a>
                 </td>
                 <td>{{$mensaje->email}}</td>
                 <td>{{$mensaje->mensaje}}</td>
                 <td>
-                    <a href="{{ route('messages.edit', $mensaje->id) }}">Editar</a>
-                    <form style="display: inline" method="POST" action="{{ route('messages.destroy', $mensaje->id) }}">
+                    <a href="{{ route('mensajes.edit', $mensaje->id) }}">Editar</a>
+                    <form style="display: inline" method="POST" action="{{ route('mensajes.destroy', $mensaje->id) }}">
                         {!! csrf_field() !!}
                         {!! method_field('DELETE') !!}
 

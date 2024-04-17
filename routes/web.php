@@ -48,27 +48,28 @@ Route::post('contacto', [PagesController::class, 'mensaje'])->name('mensaje');
 Route::get('/saludo/{nombre?}', [PagesController::class, 'saludo'])->name('saludo');
 
 
+Route::resource('mensajes', MessagesController::class);
 
-Route::get('mensajes/create', [MessagesController::class, 'create'])
-    ->name('messages.create');
-
-Route::get('mensajes', [MessagesController::class, 'index'])
-    ->name('messages.index');
-
-Route::post('mensajes', [MessagesController::class, 'store'])
-    ->name('messages.store');
-
-Route::get('mensajes/{id}', [MessagesController::class, 'show'])
-    ->name('messages.show');
-
-Route::get('mensajes/{id}/edit', [MessagesController::class, 'edit'])
-    ->name('messages.edit');
-
-Route::put('mensajes/{id}', [MessagesController::class, 'update'])
-    ->name('messages.update');
-
-Route::delete('mensajes/{id}', [MessagesController::class, 'destroy'])
-    ->name('messages.destroy');
+//Route::get('mensajes/create', [MessagesController::class, 'create'])
+//    ->name('messages.create');
+//
+//Route::get('mensajes', [MessagesController::class, 'index'])
+//    ->name('messages.index');
+//
+//Route::post('mensajes', [MessagesController::class, 'store'])
+//    ->name('messages.store');
+//
+//Route::get('mensajes/{id}', [MessagesController::class, 'show'])
+//    ->name('messages.show');
+//
+//Route::get('mensajes/{id}/edit', [MessagesController::class, 'edit'])
+//    ->name('messages.edit');
+//
+//Route::put('mensajes/{id}', [MessagesController::class, 'update'])
+//    ->name('messages.update');
+//
+//Route::delete('mensajes/{id}', [MessagesController::class, 'destroy'])
+//    ->name('messages.destroy');
 
 
 
