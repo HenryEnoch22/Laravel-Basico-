@@ -4,8 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\Message;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use function Laravel\Prompts\table;
-use DB;
 use Illuminate\Support\Carbon;
 
 
@@ -43,7 +43,6 @@ class MessagesController extends Controller
 //    ]);
 
         Message::create($request->all());
-
         return redirect()->route('mensajes.index');
     }
 

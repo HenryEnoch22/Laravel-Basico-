@@ -1,6 +1,4 @@
-@extends('layout')
-
-@section('contenido')
+<x-app-layout>
     <h1>Todos los mensajes</h1>
     <table width="100%" border="1">
         <thead>
@@ -36,4 +34,4 @@
         @endforeach
         </tbody>
     </table>
-@endsection
+</x-app-layout>

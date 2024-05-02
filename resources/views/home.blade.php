@@ -1,7 +1,3 @@
-@extends('layout')
-
-
-@section('contenido')
+<x-app-layout>
     <h1>Bienvenido a mi página web</h1>
-@stop
-
+</x-app-layout>

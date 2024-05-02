@@ -24,8 +24,6 @@ Route::get('/', function () {
 //    return view('home');
 //})->name('home');
 
-Route::get('/bienvenido', [PagesController::class, 'home'])->name('home');
-
 
 //MODO CLÁSICO
 //Route::get('/contactame', function (){
@@ -35,20 +33,12 @@ Route::get('/bienvenido', [PagesController::class, 'home'])->name('home');
 //Route::get('contactame', [PagesController::class, 'contact'])->name('contacto');
 
 
-Route::post('contacto', [PagesController::class, 'mensaje'])->name('mensaje');
-
-
 //MODO CLASICO
 //Route::get('/saludo/{nombre?}', function ($nombre = 'Invitado'){
 //
 //    return view('saludo', compact('nombre'));
 //
 //})->name('saludo');
-
-Route::get('/saludo/{nombre?}', [PagesController::class, 'saludo'])->name('saludo');
-
-
-Route::resource('mensajes', MessagesController::class);
 
 //Route::get('mensajes/create', [MessagesController::class, 'create'])
 //    ->name('messages.create');
@@ -83,7 +73,15 @@ Route::middleware([
     config('jetstream.auth_session'),
     'verified',
 ])->group(function () {
-    Route::get('/dashboard', function () {
-        return view('dashboard');
-    })->name('dashboard');
+    Route::get('/', function () {
+        return view('home');
+    })->name('home');
+    Route::get('/bienvenido', [PagesController::class, 'home'])->name('home');
+
+    Route::get('contacto', [MessagesController::class, 'create'])->name('contacto');
+
+    Route::get('/saludo/{nombre?}', [PagesController::class, 'saludo'])->name('saludo');
+
+    Route::resource('mensajes', MessagesController::class);
+
 });
