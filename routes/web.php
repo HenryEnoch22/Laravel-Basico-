@@ -1,8 +1,10 @@
 <?php
 
+use App\Http\Controllers\UsersController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\MessagesController;
 use App\Http\Controllers\PagesController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -83,5 +85,7 @@ Route::middleware([
     Route::get('/saludo/{nombre?}', [PagesController::class, 'saludo'])->name('saludo');
 
     Route::resource('mensajes', MessagesController::class);
+
+    Route::resource('usuarios', UsersController::class);
 
 });

@@ -24,6 +24,11 @@
                     <x-nav-link href="{{ route('mensajes.index') }}" :active="request()->routeIs('mensajes')">
                         {{ __('Mensajes') }}
                     </x-nav-link>
+                    @if(auth()->user()->role === 'admon')
+                        <x-nav-link href="{{ route('usuarios.index') }}" :active="request()->routeIs('usuario')">
+                        {{ __('Usuarios ') }}
+                        </x-nav-link>
+                    @endif
                 </div>
             </div>
 
